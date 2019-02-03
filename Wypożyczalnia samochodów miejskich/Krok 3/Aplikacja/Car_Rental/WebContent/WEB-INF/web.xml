@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>CarRentala</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+	<welcome-file>register.jsp</welcome-file>
+  </welcome-file-list>
+  
+  			<servlet-mapping>  
+		        <servlet-name>default</servlet-name>  
+		        <url-pattern>*.css</url-pattern>  
+		    </servlet-mapping>  
+		  
+		    <servlet-mapping>  
+		        <servlet-name>default</servlet-name>  
+		        <url-pattern>*.js</url-pattern>  
+		    </servlet-mapping> 
+  
+  
+			  <servlet>  
+				    <servlet-name>Home</servlet-name>
+				    <jsp-file>/profile/view/Home.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Home</servlet-name>
+				    <url-pattern>/user-home-page/*</url-pattern>   
+			</servlet-mapping>
+			
+			 <servlet>  
+				    <servlet-name>My_Profile</servlet-name>
+				    <jsp-file>/profile/view/My_Profile.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>My_Profile</servlet-name>
+				    <url-pattern>/user-profile</url-pattern>   
+			</servlet-mapping>
+			
+			 <servlet>  
+				    <servlet-name>Sign_out_controller</servlet-name>
+				    <jsp-file>/profile/controller/Sign_out_controller.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Sign_out_controller</servlet-name>
+				    <url-pattern>/sign-out-controller</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>Admin_Profiles</servlet-name>
+				    <jsp-file>/profile/view/Admin_Profiles.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Admin_Profiles</servlet-name>
+				    <url-pattern>/admin-profiles</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>Admin_Settings</servlet-name>
+				    <jsp-file>/profile/view/Admin_Settings.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Admin_Settings</servlet-name>
+				    <url-pattern>/settings</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>Check_Data</servlet-name>
+				    <jsp-file>/profile/view/Check_Data.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Check_Data</servlet-name>
+				    <url-pattern>/check-data</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>Mail_Box</servlet-name>
+				    <jsp-file>/profile/view/Mail_Box.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Mail_Box</servlet-name>
+				    <url-pattern>/mail-box</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>Notification</servlet-name>
+				    <jsp-file>/profile/view/Notification.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Notification</servlet-name>
+				    <url-pattern>/notification</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>Statistic_Generator</servlet-name>
+				    <jsp-file>/profile/view/Statistic_Generator.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Statistic_Generator</servlet-name>
+				    <url-pattern>/statistic-generator</url-pattern>   
+			</servlet-mapping>
+			
+			
+			<servlet>  
+				    <servlet-name>Register_User</servlet-name>
+				    <jsp-file>/profile/view/Register_User.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Register_User</servlet-name>
+				    <url-pattern>/register-user</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>Register_controller</servlet-name>
+				    <jsp-file>/profile/controller/Register_controller.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Register_controller</servlet-name>
+				    <url-pattern>/Register-controller</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>LiveTalk</servlet-name>
+				    <jsp-file>/profile/view/LiveTalk.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>LiveTalk</servlet-name>
+				    <url-pattern>/live-talk</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>New_Issues</servlet-name>
+				    <jsp-file>/profile/view/New_Issues.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>New_Issues</servlet-name>
+				    <url-pattern>/new-issues</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>Support</servlet-name>
+				    <jsp-file>/profile/view/Support.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Support</servlet-name>
+				    <url-pattern>/support</url-pattern>   
+			</servlet-mapping>
+				<servlet>  
+				    <servlet-name>Workshop_data_filtr_controller</servlet-name>
+				    <jsp-file>/profile/controller/Workshop_data_filtr_controller.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Workshop_data_filtr_controller</servlet-name>
+				    <url-pattern>/workshop-data-filtr-controller</url-pattern>   
+			</servlet-mapping>
+		<servlet>  
+	  <servlet-name>Rental_data_filtr_controller</servlet-name>
+					    <jsp-file>/profile/controller/Rental_data_filtr_controller.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Rental_data_filtr_controller</servlet-name>
+				    <url-pattern>/rental-data-filtr-controller</url-pattern>   
+			</servlet-mapping>
+
+				<servlet>  
+			  <servlet-name>Transaction_data_filtr_controller</servlet-name>
+				    <jsp-file>/profile/controller/Transaction_data_filtr_controller.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Transaction_data_filtr_controller</servlet-name>
+				    <url-pattern>/transaction-data-filtr-controller</url-pattern>   
+			</servlet-mapping>
+
+			<servlet>  
+				    <servlet-name>User_data_filtr_controller</servlet-name>
+				    <jsp-file>/profile/controller/User_data_filtr_controller.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>User_data_filtr_controller</servlet-name>
+				    <url-pattern>/user-data-filtr-controller</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>Model_data_filtr_controller</servlet-name>
+				    <jsp-file>/profile/controller/Model_data_filtr_controller.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Model_data_filtr_controller</servlet-name>
+				    <url-pattern>/model-data-filtr-controller</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>Price_list_data_filtr_controller</servlet-name>
+				    <jsp-file>/profile/controller/Price_list_data_filtr_controller.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Price_list_data_filtr_controller</servlet-name>
+				    <url-pattern>/price-list-data-filtr-controller</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>Inspections_data_filtr_controller</servlet-name>
+				    <jsp-file>/profile/controller/Inspections_data_filtr_controller.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Inspections_data_filtr_controller</servlet-name>
+				    <url-pattern>/inspections-data-filtr-controller</url-pattern>   
+			</servlet-mapping>
+			
+			<servlet>  
+				    <servlet-name>Insurances_data_filtr_controller</servlet-name>
+				    <jsp-file>/profile/controller/Insurances_data_filtr_controller.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Insurances_data_filtr_controller</servlet-name>
+				    <url-pattern>/insurances-data-filtr-controller</url-pattern>   
+			</servlet-mapping>
+  
+  			<servlet>  
+				    <servlet-name>Account_data_filtr_controller</servlet-name>
+				    <jsp-file>/profile/controller/Account_data_filtr_controller.jsp</jsp-file>
+				</servlet>
+				  
+				<servlet-mapping>
+				    <servlet-name>Account_data_filtr_controller</servlet-name>
+				    <url-pattern>/account-data-filtr-controller</url-pattern>   
+			</servlet-mapping>
+  
+  
+
+ </web-app>

@@ -1,0 +1,90 @@
+DROP FUNCTION IF EXISTS getDateFromPesel;
+DROP FUNCTION IF EXISTS ISDATE;
+
+DELIMITER $$
+CREATE FUNCTION ISDATE (sIn varchar(1024)) 
+RETURNS INT
+DETERMINISTIC
+BEGIN
+	declare tp int;
+	if (select length(date(sIn)) is null )then
+		set tp = 0;
+	else
+		set tp = 1;
+	end if;
+	RETURN tp;
+END $$
+DELIMITER ;
+
+
+
+DELIMITER $$
+CREATE FUNCTION getDateFromPesel (s CHAR(11))
+RETURNS DATE
+DETERMINISTIC
+BEGIN
+
+    DECLARE c CHAR(1);
+    DECLARE date date;
+--  DECLARE @fact varchar(11);
+-- 	DECLARE @sum int;
+-- 	DECLARE @i int;
+--  DECLARE @validInt int;
+    
+ 	SET @fact := '13791379131';
+	-- Suma kontrolna
+ 	SET @sum =0;
+ 	SET @i =1;
+	-- Czy numer PESEL jest prawidłowy
+ 	SET @valid =1;
+	-- Czy w numerze są same cyfry
+ 	SET @validInt =1;
+	-- Sprawdź długość numeru PESEL
+ 	IF (LENGTH(s) != 11)
+ 		THEN SET @validInt = 0;
+ 	ELSE
+		WHILE @i <= 11 DO
+			-- Sprawdź, czy wszystkie znaki to cyfry
+			-- Jeżeli tak, policz sumę kontrolną
+			SET @c = SUBSTRING(s, @i ,1);
+			IF (@c <'0' OR @c >'9')
+				THEN SET @validInt = 0;
+			ELSE
+				SET @sum = @sum + CAST( SUBSTRING(@fact, @i, 1) as UNSIGNED) * @c;
+			END IF;
+            
+            SET @i = @i + 1;
+		END WHILE;
+    END IF;
+    
+	IF @sum % 10 != 0 OR @validInt = 0
+		THEN SET @valid = 0;
+	END IF;
+    
+	IF @validInt = 1 THEN 
+		SET @int = SUBSTRING(s, 1, 2);
+		SET @rok = 1900 + @int;
+		-- Przeanalizuj pierwszą cyfrę miesiąca, może tam być
+		-- informacja o latach 1800-1899 i 2000-2299
+		SET @int = SUBSTRING(s,3,1);
+		IF (@int >= 2 AND @int < 8) THEN
+			SET @rok = @rok + @int / 2 * 100;
+		END IF;
+		IF (@int >= 8) THEN
+			SET @rok = @rok - 100;
+		END IF;
+		SET @miesiac  = ( @int % 2) * 10 + SUBSTRING(s,4,1);
+		SET @str = CAST(@rok AS CHAR) +
+			CASE WHEN @miesiac < 10 THEN '0' ELSE '' END +
+			CAST(@miesiac AS CHAR) + SUBSTRING(s,5,2);
+		IF ISDATE(@str) = 1 THEN
+			SET @date = CAST(@str as date);
+		ELSE
+			SET @valid = 0;
+		END IF;
+	END IF;
+    RETURN @date;
+END $$
+DELIMITER ;
+
+select getDateFromPesel('89051208391');
